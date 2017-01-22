@@ -1,5 +1,7 @@
 # OpenURI
 
+[![Build Status](https://travis-ci.org/utahta/go-openuri.svg?branch=master)](https://travis-ci.org/utahta/go-openuri)
+
 Easy to open an io.ReadCloser from a local file or URL.
 
 ## Install
