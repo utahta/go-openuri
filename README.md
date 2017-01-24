@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/utahta/go-openuri.svg?branch=master)](https://travis-ci.org/utahta/go-openuri)
 
-Easy to open an io.ReadCloser from a local file or URL.
+Easy way to open an io.ReadCloser from a local file and URL.
 
 ## Install
 
@@ -11,6 +11,22 @@ $ go get -u github.com/utahta/go-openuri
 ```
 
 ## Usage
+
+```go
+import "github.com/utahta/go-openuri"
+```
+
+Open the file.
+```go
+o, err := openuri.Open("/path/to/file")
+```
+
+Open the URL.
+```go
+o, err := openuri.Open("http://localhost")
+```
+
+## Example
 
 ```go
 package main
@@ -26,10 +42,11 @@ func main() {
 	//
 	// Open a local file
 	//
-	o, err := openuri.Open("/path/to/file.txt")
+	o, err := openuri.Open("/path/to/file")
 	if err != nil {
 	    log.Fatal(err)
 	}
+	defer o.Close()
 	
 	b, _ := ioutil.ReadAll(o)
 	log.Println(string(b))
@@ -37,10 +54,11 @@ func main() {
 	//
 	// Open URL
 	//
-	o, err = openuri.Open("http://example.com")
+	o, err = openuri.Open("http://localhost")
 	if err != nil {
 	    log.Fatal(err)
 	}
+	defer o.Close()
 	
 	b, _ = ioutil.ReadAll(o)
 	log.Println(string(b))
