@@ -26,6 +26,11 @@ Open the URL.
 o, err := openuri.Open("http://localhost")
 ```
 
+with Google App Engine
+```go
+o, err := openuri.Open("http://localhost", openuri.WithHTTPClient(urlfetch.Client(ctx)))
+```
+
 ## Example
 
 ```go
