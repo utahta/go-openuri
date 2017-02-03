@@ -1,5 +1,6 @@
 # OpenURI
 
+[![GitHub release](https://img.shields.io/github/release/utahta/go-openuri.svg)](https://github.com/utahta/go-openuri/releases) 
 [![Build Status](https://travis-ci.org/utahta/go-openuri.svg?branch=master)](https://travis-ci.org/utahta/go-openuri)
 
 Easy way to open an io.ReadCloser from a local file and URL.
